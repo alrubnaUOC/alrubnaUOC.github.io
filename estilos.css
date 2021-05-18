@@ -1,0 +1,113 @@
+
+      body {
+        background: #e8e5e5;
+        font-family: "Abel", sans-serif;
+        margin: 0px;
+      }
+
+      .country {
+        stroke: rgb(95, 77, 77);
+      }
+
+      path.active {
+        fill: rgb(241, 187, 115);
+      }    
+
+      .barras {
+        fill: #4dbbb3;
+      }
+
+      .mapa {
+        border: 1px solid;
+        border-color: rgb(53, 126, 100);
+        background-color: #bfbfc7;
+        box-shadow: 3px 3px #69696952;
+      }
+
+      .line {
+        fill: none;
+        stroke: rgb(201, 129, 61);
+        stroke-width: 4px;
+      }
+
+      .axisSteelBlue text {
+        fill: rgb(17, 66, 21);
+      }
+
+      .axisRed text {
+        fill: rgb(61, 49, 165);
+      }
+
+      .contenedor {
+        display: flex;
+        justify-content: center;
+      }
+
+      .grafico {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .titulo {
+        display: flex;
+        justify-content: center;
+      }
+
+      .formulario  {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      div.detalle {   
+        position: absolute;           
+        text-align: center;           
+        padding: 2px;             
+        font: 12px sans-serif;        
+        background-color: rgba(233, 105, 105, 0.884);
+        border: 0px;      
+        border-radius: 5px;           
+        pointer-events: none;         
+        display: none;
+      }
+
+      .nombre-pais {
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+      }
+
+      .leyenda {
+        width: 10px;
+        height: 10px;
+        background-color: azure;
+        border: 1px solid rgb(99, 99, 99);
+        padding: 0px 8px 0px 8px;
+        margin-right: 4px;
+      }
+
+      .pie-mapa {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+      }
+
+      .titulo {
+        background-color: #9299ac;
+        margin: 0 0 20 0;
+        padding: 0px;
+      }
+
+      .titulo h1 {
+        color: white;
+        margin: 0px;
+        padding: 10px;
+      }
+
+      .titulo-fallecimientos {
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+
+      .titulo-tipo-vacuna {
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
