@@ -205,15 +205,24 @@ function grafico() {
 
     svg_bar
       .append("circle")
-      .attr("cx", width - 115)
-      .attr("cy", -40)
+      .attr("cx", width - 35)
+      .attr("cy", -25)
       .attr("r", 4)
       .style("stroke", "red")
       .style("fill", "#2ecfff");
 
     svg_bar
+      .append("text")
+      .attr("x", width - 25)
+      .attr("y", -25)
+      .text("vacunados (%)")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle");
+
+
+    svg_bar
       .append("rect")
-      .attr("x", width - 120)
+      .attr("x", -30)
       .attr("y", -25)
       .attr("height", 10)
       .attr("width", 10)
@@ -221,19 +230,12 @@ function grafico() {
 
     svg_bar
       .append("text")
-      .attr("x", width - 100)
-      .attr("y", -15)
+      .attr("x", -15)
+      .attr("y", -18)
       .text("fallecidos")
       .style("font-size", "15px")
       .attr("alignment-baseline", "middle");
 
-    svg_bar
-      .append("text")
-      .attr("x", width - 100)
-      .attr("y", -35)
-      .text("vacunados (%)")
-      .style("font-size", "15px")
-      .attr("alignment-baseline", "middle");
 
     svg_bar
       .append("text")

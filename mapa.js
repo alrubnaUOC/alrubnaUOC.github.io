@@ -2,12 +2,6 @@ d3.csv("datos.csv", (data) => {
 
     var max_porc = Math.max(...data.map((d) => +d.porc_vacunados_acum));
 
-    var color = d3
-      .scaleLinear()
-      .domain([0, max_porc])
-      .range(["azure", "steelblue"]);
-
-
     var svg = d3
       .select("#mapa")
       .append("svg")
@@ -15,9 +9,55 @@ d3.csv("datos.csv", (data) => {
       .attr("height", 400)
       .attr("class", "mapa");
 
+    var color = d3
+      .scaleLinear()
+      .domain([0, max_porc])
+      .range(["azure", "steelblue"]);
+
+    
     var projection = d3.geoMercator().scale(290).center([70, 53]);
 
     var geoPath = d3.geoPath().projection(projection);
+
+    var defs = svg.append('defs');
+
+    var lg = defs.append('linearGradient')
+     .attr('id', 'Gradient2')
+     .attr('x1', 0)
+     .attr('x2', 1)
+     .attr('y1', 0)
+     .attr('y2', 0);
+    
+    lg.append('stop')
+     .attr('offset', '0%')
+     .attr('stop-color', 'azure');
+    
+    lg.append('stop')
+     .attr('offset', max_porc)
+     .attr('stop-color', 'steelblue');
+    
+    
+    svg.append('rect')
+     .attr('x', 80)
+     .attr('y', 30)
+     .attr('width', 100)
+     .attr('height', 20)
+     .style("fill", "url(#Gradient2)");   
+
+    svg.append("text")
+     .attr("x", 75)
+     .attr("y", 18)
+     .text("0%")
+     .style("font-size", "15px")
+     .attr("alignment-baseline", "middle");
+
+     svg.append("text")
+     .attr("x", 165)
+     .attr("y", 18)
+     .text(parseInt(max_porc*100) + '%')
+     .style("font-size", "15px")
+     .attr("alignment-baseline", "middle");
+
 
     d3.queue().defer(d3.json, "world-110m.geojson").await(ready);
 
